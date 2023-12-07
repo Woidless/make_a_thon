@@ -8,7 +8,7 @@ DJANGO_SETTINGS_MODULE= settings.configure()
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-BASE_URL = config('BASE_URL')
+BASE_URL = config('BASE_URL', default='http://localhost:8000')
 
 SECRET_KEY = config('SECRET_KEY')
 
