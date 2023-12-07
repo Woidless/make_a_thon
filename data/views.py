@@ -1,3 +1,13 @@
-from django.shortcuts import render
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from . import serializers
+# 
+from rest_framework import permissions
+# 
 
-# Create your views here.
+class DataTruckView(APIView):
+    permission_classes = (permissions.AllowAny,)
+
+    def post(self, request):
+        serializer = serializers.DataTruckSerializers(data=request.data)
+        return Response('Bad request!', status=400)
